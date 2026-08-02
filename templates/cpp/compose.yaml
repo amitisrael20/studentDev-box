@@ -1,0 +1,16 @@
+services:
+  cpp-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: studentdev-box-cpp:1.0
+    container_name: studentdev-cpp
+
+    working_dir: /app
+
+    volumes:
+      - ./app:/app
+
+    stdin_open: true
+    tty: true

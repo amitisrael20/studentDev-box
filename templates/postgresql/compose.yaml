@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: studentdev-postgres
+
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: studentpass
+      POSTGRES_DB: studentdb
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:

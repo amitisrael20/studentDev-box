@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "studentdev-box"
+version = "0.1.0"
+description = "CLI tool for managing isolated Docker-based development environments for students"
+requires-python = ">=3.10"
+dependencies = [
+    "docker>=7.0.0"
+]
+
+[project.scripts]
+devbox = "studentdev_box.cli:main"
